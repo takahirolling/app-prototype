@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-50: #fdf8f3;
+  --color-warm-100: #faeee0;
+  --color-warm-200: #f5dcc0;
+  --color-warm-300: #edbe8c;
+  --color-warm-400: #e4a060;
+  --color-warm-500: #dc8a3e;
+  --color-warm-600: #cc7030;
+  --color-warm-700: #aa5828;
+  --color-warm-800: #884826;
+  --color-warm-900: #6e3c22;
+
+  --color-sunset-50: #fef5f2;
+  --color-sunset-100: #fde8e1;
+  --color-sunset-200: #fcd5c8;
+  --color-sunset-300: #f9b5a1;
+  --color-sunset-400: #f48c6b;
+  --color-sunset-500: #ea6a42;
+  --color-sunset-600: #d74f27;
+  --color-sunset-700: #b43f1e;
+  --color-sunset-800: #94371d;
+  --color-sunset-900: #7b321e;
+
+  --color-forest-50: #f2f7f3;
+  --color-forest-100: #e0ede2;
+  --color-forest-200: #c3dbc7;
+  --color-forest-300: #97c0a0;
+  --color-forest-400: #6aa178;
+  --color-forest-500: #48855b;
+  --color-forest-600: #366a47;
+  --color-forest-700: #2c553a;
+  --color-forest-800: #264430;
+  --color-forest-900: #203829;
+
+  --color-sky-50: #f0f7fe;
+  --color-sky-100: #ddecfc;
+  --color-sky-200: #c3dffa;
+  --color-sky-300: #99cbf6;
+  --color-sky-400: #69aef0;
+  --color-sky-500: #468eea;
+  --color-sky-600: #3172de;
+  --color-sky-700: #285dcc;
+  --color-sky-800: #274ca6;
+  --color-sky-900: #244283;
+
+  --font-sans: "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-warm-50 text-gray-800 font-sans antialiased;
+  overscroll-behavior: none;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heart-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes swipe-right {
+  to { transform: translateX(150%) rotate(20deg); opacity: 0; }
+}
+
+@keyframes swipe-left {
+  to { transform: translateX(-150%) rotate(-20deg); opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-heart-pop {
+  animation: heart-pop 0.3s ease-out;
+}
+
+.animate-swipe-right {
+  animation: swipe-right 0.3s ease-out forwards;
+}
+
+.animate-swipe-left {
+  animation: swipe-left 0.3s ease-out forwards;
+}
