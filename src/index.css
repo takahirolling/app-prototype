@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-50: #fefcf8;
+  --color-warm-100: #fdf6ec;
+  --color-warm-200: #f9e8cc;
+  --color-warm-300: #f3d5a3;
+  --color-warm-400: #e8b866;
+  --color-warm-500: #d4963c;
+  --color-warm-600: #b87a2e;
+  --color-warm-700: #8f5e24;
+  --color-warm-800: #6b4720;
+  --color-warm-900: #4a3118;
+
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+
+  --color-leaf-50: #f0fdf4;
+  --color-leaf-100: #dcfce7;
+  --color-leaf-400: #4ade80;
+  --color-leaf-500: #22c55e;
+  --color-leaf-600: #16a34a;
+
+  --color-sunset-50: #fff7ed;
+  --color-sunset-100: #ffedd5;
+  --color-sunset-400: #fb923c;
+  --color-sunset-500: #f97316;
+  --color-sunset-600: #ea580c;
+
+  --color-rose-50: #fff1f2;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+
+  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-warm-50 text-warm-900 font-sans antialiased;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  background: white;
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardSwipeRight {
+  to { opacity: 0; transform: translateX(150%) rotate(20deg); }
+}
+
+@keyframes cardSwipeLeft {
+  to { opacity: 0; transform: translateX(-150%) rotate(-20deg); }
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.swipe-right {
+  animation: cardSwipeRight 0.4s ease-in forwards;
+}
+
+.swipe-left {
+  animation: cardSwipeLeft 0.4s ease-in forwards;
+}
+
+.badge-pulse {
+  animation: pulse-badge 2s ease-in-out infinite;
+}
